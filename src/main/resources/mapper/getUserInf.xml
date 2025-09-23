@@ -1,0 +1,10 @@
+<!-- resources/mapper/UserInfMapper.xml -->
+<mapper namespace="com.example.demo.mapper.UserInfMapper">
+
+    <select id=" getUserInf" resultType="UserInf">
+        SELECT * 
+        FROM userInf
+        WHERE id = #{userId} 
+    </select>
+
+</mapper>
