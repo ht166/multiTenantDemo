@@ -1,25 +1,23 @@
 package com.demo;
 
-import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
-import org.springframework.security.web.SecurityFilterChain;
+import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
+import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
 
 @Configuration
-public class SecurityConfig {
+@EnableWebSecurity
+public class SecurityConfig extends WebSecurityConfigurerAdapter {
 
-    @Bean
-    public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
-        http
-            .authorizeHttpRequests(auth -> auth
-                .anyRequest().permitAll() // 全てのリクエストを許可
-            )
-            .formLogin(form -> form
-                    .loginPage("/login/login")   // 自作ログイン画面
-                    .permitAll()
-                )
-//            .csrf(csrf -> csrf.disable()); // 開発用にCSRF無効化（必要なら）
-            ;
-        return http.build();
+    @Override
+    protected void configure(HttpSecurity http) throws Exception {
+        http.authorizeRequests()
+                .anyRequest().permitAll() // ここで全リクエスト許可
+            .and()
+            .formLogin()
+                .loginPage("/login/login")
+                .permitAll()
+            .and()
+            .csrf().disable(); // 開発用
     }
 }

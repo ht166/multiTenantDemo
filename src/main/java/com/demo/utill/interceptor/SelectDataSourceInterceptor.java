@@ -1,13 +1,15 @@
 package com.demo.utill.interceptor;
 
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
 import org.springframework.stereotype.Component;
 import org.springframework.web.servlet.HandlerInterceptor;
 
 import com.demo.config.datasource.DataSourceContextHolder;
 import com.demo.dto.UserInfDto;
 
-import jakarta.servlet.http.HttpServletRequest;
-import jakarta.servlet.http.HttpServletResponse;
+
 @Component
 public class SelectDataSourceInterceptor implements HandlerInterceptor {
 

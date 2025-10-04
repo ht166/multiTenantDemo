@@ -1,5 +1,8 @@
 package com.demo.config.datasource;
 
+import org.springframework.stereotype.Component;
+
+@Component
 public class DataSourceContextHolder {
 	private static final ThreadLocal<String> contextHolder = new ThreadLocal<>();
 

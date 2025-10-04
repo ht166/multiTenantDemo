@@ -2,6 +2,8 @@ package com.demo.action;
 
 import java.lang.invoke.MethodHandles;
 
+import javax.validation.Valid;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.BeanUtils;
@@ -18,7 +20,6 @@ import com.demo.dto.UserInfDto;
 import com.demo.form.LoginForm;
 import com.demo.service.LoginService;
 
-import jakarta.validation.Valid;
 
 @RequestMapping(value = "/login")
 @Controller

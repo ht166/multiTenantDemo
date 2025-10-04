@@ -3,17 +3,17 @@ package com.demo.config.datasource;
 import java.util.HashMap;
 import java.util.Map;
 
-import org.springframework.boot.context.properties.ConfigurationProperties;
+import javax.annotation.PostConstruct;
 
-import jakarta.annotation.PostConstruct;
 import lombok.Getter;
 import lombok.Setter;
 
 
-@ConfigurationProperties(prefix = "spring.datasource")
+
 @Getter
 @Setter
 public class DataSourceProperties {
+	
 	private Map<String, DataSourceProps> datasource = new HashMap<>();
 	
 	@PostConstruct

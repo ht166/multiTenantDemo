@@ -1,5 +1,8 @@
 package com.demo.config.datasource;
 
+import org.springframework.stereotype.Component;
+
+@Component
 public class DataSourceContext {
 
     public static void setIfChanged(String dsKey) {
