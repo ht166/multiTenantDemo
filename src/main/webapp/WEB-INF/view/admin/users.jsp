@@ -7,19 +7,23 @@
 	<tr>
 		<th>ID</th>
 		<th>ユーザー名</th>
+		<th>登録年月日</th>
 		<th>メニュー権限</th>
+		<th>テナント用コード</th>
 		<th>操作</th>
 	</tr>
 	
 	<c:forEach var="user" items="${users}">
 		<tr>
-			<td>${user.userId}</td>
+			<td>${user.id}</td>
 			<td>${user.userName}</td>
-			<td>${user.menuLevel}</td>
+			<td>${user.created_at}</td>
+			<td>${user.level}</td>
+			<td>${user.code}</td>
 			<td><a
-				href="${pageContext.request.contextPath}/admin/editUser/${user.userId}">編集</a>
+				href="${pageContext.request.contextPath}/admin/editUser/${user.id}">編集</a>
 				<form
-					action="${pageContext.request.contextPath}/admin/deleteUser/${user.userId}"
+					action="${pageContext.request.contextPath}/admin/deleteUser/${user.id}"
 					method="post" style="display: inline;">
 					<input type="hidden" name="${_csrf.parameterName}"
 						value="${_csrf.token}" />

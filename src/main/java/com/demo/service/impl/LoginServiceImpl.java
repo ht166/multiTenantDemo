@@ -7,7 +7,6 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.demo.config.datasource.DataSourceContextHolder;
 import com.demo.dto.UserInfDto;
 import com.demo.entity.UserInf;
 import com.demo.repository.UserInfMapper;
@@ -21,9 +20,6 @@ public class LoginServiceImpl implements LoginService {
 	private UserInfMapper userInfMapper;
 
 	public boolean countByIdAndPassword(String userId, String password) {
-//		明示的にデータソースをユーザーにする
-		DataSourceContextHolder.setDataSourceKey("user");
-		
 		logger.info("countByIdAndPasswordを実行");
 		int count = userInfMapper.countByIdAndPassword(userId, password);
 		logger.info("countByIdAndPasswordが成功");
@@ -33,8 +29,6 @@ public class LoginServiceImpl implements LoginService {
 	
 	public UserInfDto getUserInf(String userId) {
 		logger.info("getUserInfを実行");
-//		明示的にデータソースをユーザーにする テスト用
-		DataSourceContextHolder.setDataSourceKey("A");
 		
 		UserInf user = userInfMapper.getUserInf(userId);
 

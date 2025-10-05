@@ -2,8 +2,9 @@ package com.demo.dto;
 
 import java.security.Timestamp;
 
+import org.springframework.context.annotation.Scope;
+import org.springframework.context.annotation.ScopedProxyMode;
 import org.springframework.stereotype.Component;
-import org.springframework.web.context.annotation.SessionScope;
 
 import lombok.Getter;
 import lombok.Setter;
@@ -15,7 +16,7 @@ import lombok.Setter;
 @Component
 @Getter
 @Setter
-@SessionScope
+@Scope(value = "session", proxyMode = ScopedProxyMode.TARGET_CLASS)
 public class UserInfDto {
 	/*
 	 * ユーザーID
