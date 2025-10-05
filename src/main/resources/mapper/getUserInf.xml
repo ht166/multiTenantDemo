@@ -4,7 +4,7 @@
 
     <select id=" getUserInf" resultType="UserInf">
         SELECT * 
-        FROM userInf
+        FROM userinf
         WHERE id = #{userId} 
     </select>
 

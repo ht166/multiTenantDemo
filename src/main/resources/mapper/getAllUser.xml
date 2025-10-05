@@ -8,11 +8,11 @@
         SELECT
             id,
             password,
-            user_name AS userName,
+            "userName" AS userName,
             created_at,
             level,
             code
-        FROM "userInf"
+        FROM userinf
         ORDER BY created_at DESC
     </select>
 
