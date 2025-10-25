@@ -8,15 +8,15 @@
 </head>
 <body>
    <% out.println("welcome"); %>
-   <p>ã‚ˆã†ã“ãã€${sessionUser.userName} ã•ã‚“ï¼</p>
-   <p>ãƒ¡ãƒ‹ãƒ¥ãƒ¼ãƒ¬ãƒ™ãƒ«ï¼š${sessionUser.level}ã§ã™</p>
+   <p>‚æ‚¤‚±‚»A${sessionUser.userName} ‚³‚ñI</p>
+   <p>ƒƒjƒ…[ƒŒƒxƒ‹F${sessionUser.level}‚Å‚·</p>
    
-   <p>ã‚ãªãŸã«ã¯ç®¡ç†è€…æ¨©é™ãŒã‚ã‚Šã¾ã™</p>
+   <p>‚ ‚È‚½‚É‚ÍŠÇ—ŽÒŒ ŒÀ‚ª‚ ‚è‚Ü‚·</p>
     <c:if test="${sessionUser}== null" >
-  		 <p>sessionUserãŒç©ºã§ã™</p>
+  		 <p>sessionUser‚ª‹ó‚Å‚·</p>
    </c:if>
 <a href="${pageContext.request.contextPath}/admin/users">
-    <button type="button">ãƒ¦ãƒ¼ã‚¶ãƒ¼ç®¡ç†ç”»é¢_ä¸€è¦§ã¸</button>
+    <button type="button">ƒ†[ƒU[ŠÇ—‰æ–Ê_ˆê——‚Ö</button>
 </a>
 </body>
 </html>

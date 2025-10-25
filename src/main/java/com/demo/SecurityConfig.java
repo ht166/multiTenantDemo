@@ -12,12 +12,12 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
     @Override
     protected void configure(HttpSecurity http) throws Exception {
         http.authorizeRequests()
-                .anyRequest().permitAll() // 縺薙％縺ｧ蜈ｨ繝ｪ繧ｯ繧ｨ繧ｹ繝郁ｨｱ蜿ｯ
+                .anyRequest().permitAll() // ここで全リクエスト許可
             .and()
             .formLogin()
                 .loginPage("/login/login")
                 .permitAll()
             .and()
-            .csrf().disable(); // 髢狗匱逕ｨ
+            .csrf().disable(); // 開発用
     }
 }

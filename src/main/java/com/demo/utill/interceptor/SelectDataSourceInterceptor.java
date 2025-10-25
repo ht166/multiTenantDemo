@@ -15,7 +15,7 @@ import com.demo.dto.UserInfDto;
 
 @Component
 public class SelectDataSourceInterceptor implements HandlerInterceptor {
-	/** ãƒ­ã‚¬ãƒ¼ */
+	/** ƒƒK[ */
 	private static final Logger log = LoggerFactory.getLogger(SelectDataSourceInterceptor.class);
 	
 	@Autowired
@@ -23,7 +23,7 @@ public class SelectDataSourceInterceptor implements HandlerInterceptor {
 	
     @Override
     public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler) {
-        log.info("ãƒ‡ãƒ¼ã‚¿ã‚½ãƒ¼ã‚¹åˆ‡ã‚Šæ›¿ãˆå‡¦ç†é–‹å§‹");
+        log.info("ƒf[ƒ^ƒ\[ƒXØ‚è‘Ö‚¦ˆ—ŠJn");
     	String dsKey = "user";
 
     	if (sessionUser != null && sessionUser.getCode() != null && !sessionUser.getCode().isBlank()) {
@@ -31,14 +31,14 @@ public class SelectDataSourceInterceptor implements HandlerInterceptor {
             log.info("dsKey = " +dsKey);
             DataSourceContextHolder.setDataSourceKey(dsKey);
         }else if(sessionUser != null) {
-        	log.info("ã‚»ãƒƒã‚·ãƒ§ãƒ³ãƒ¦ãƒ¼ã‚¶ãƒ¼ãŒnullã®ãŸã‚ãƒ‡ãƒ¼ã‚¿ã‚½ãƒ¼ã‚¹åˆ‡ã‚Šæ›¿ãˆãªã—");
+        	log.info("ƒZƒbƒVƒ‡ƒ“ƒ†[ƒU[‚ªnull‚Ì‚½‚ßƒf[ƒ^ƒ\[ƒXØ‚è‘Ö‚¦‚È‚µ");
         }else {
-        	log.info("ã‚»ãƒƒã‚·ãƒ§ãƒ³ãƒ¦ãƒ¼ã‚¶ãƒ¼ã®codeãŒä¸æ˜ã®ãŸã‚ãƒ‡ãƒ¼ã‚¿ã‚½ãƒ¼ã‚¹åˆ‡ã‚Šæ›¿ãˆãªã—");
+        	log.info("ƒZƒbƒVƒ‡ƒ“ƒ†[ƒU[‚Ìcode‚ª•s–¾‚Ì‚½‚ßƒf[ƒ^ƒ\[ƒXØ‚è‘Ö‚¦‚È‚µ");
         }
 
        
         
-        log.info("ãƒ‡ãƒ¼ã‚¿ã‚½ãƒ¼ã‚¹åˆ‡ã‚Šæ›¿ãˆå‡¦ç†çµ‚äº†");
+        log.info("ƒf[ƒ^ƒ\[ƒXØ‚è‘Ö‚¦ˆ—I—¹");
         return true;
     }
 

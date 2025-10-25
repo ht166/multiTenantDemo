@@ -7,10 +7,10 @@
 <html>
 <head>
     <meta charset="UTF-8">
-    <title>„É≠„Ç∞„Ç§„É≥</title>
+    <title>ÉçÉOÉCÉì</title>
 </head>
 <body>
-    <h2>„É≠„Ç∞„Ç§„É≥</h2>
+    <h2>ÉçÉOÉCÉì</h2>
     <c:if test="${not empty message}">
         <p style="color:red">${message}</p>
     </c:if>
@@ -18,15 +18,15 @@
     <!-- <c:set var="jump_url" value="/login/auth"/> -->
     <form:form modelAttribute="loginForm" action="/login/auth" method="post">
         <div>
-            <form:label path="userId">„É¶„Éº„Ç∂„ÉºIDÔºö</form:label>
+            <form:label path="userId">ÉÜÅ[ÉUÅ[IDÅF</form:label>
             <form:input path="userId"/>
         </div>
         <div>
-             <form:label path="password">„Éë„Çπ„ÉØ„Éº„ÉâÔºö</form:label>
+             <form:label path="password">ÉpÉXÉèÅ[ÉhÅF</form:label>
             <form:input path="password"/>
         </div>
         <div>
-            <input type="submit" value="„É≠„Ç∞„Ç§„É≥"/>
+            <input type="submit" value="ÉçÉOÉCÉì"/>
         </div>
         <div>
         	<form:errors path="*" style="color: red;"/>

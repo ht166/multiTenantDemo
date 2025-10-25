@@ -20,25 +20,25 @@ public class LoginServiceImpl implements LoginService {
 	private UserInfMapper userInfMapper;
 
 	public boolean countByIdAndPassword(String userId, String password) {
-		logger.info("countByIdAndPasswordã‚’å®Ÿè¡Œ");
+		logger.info("countByIdAndPassword‚ğÀs");
 		int count = userInfMapper.countByIdAndPassword(userId, password);
-		logger.info("countByIdAndPasswordãŒæˆåŠŸ");
+		logger.info("countByIdAndPassword‚ª¬Œ÷");
 		
 		return (count >= 0);
 	}
 	
 	public UserInfDto getUserInf(String userId) {
-		logger.info("getUserInfã‚’å®Ÿè¡Œ");
+		logger.info("getUserInf‚ğÀs");
 		
 		UserInf user = userInfMapper.getUserInf(userId);
 
-		// DTO ã«å¤‰æ›
+		// DTO ‚É•ÏŠ·
 		UserInfDto dto = new UserInfDto();
 		dto.setId(user.getId());
 		dto.setUserName(user.getUserName());
 		dto.setLevel(user.getLevel());
 		dto.setCode(user.getCode());
-		logger.info("getUserInfãŒæˆåŠŸã€€DTOã«å¤‰æ›");
+		logger.info("getUserInf‚ª¬Œ÷@DTO‚É•ÏŠ·");
 		return dto;
 	}
 

@@ -8,13 +8,13 @@
 </head>
 <body>
    <% out.println("welcome"); %>
-   <p>ã‚ˆã†ã“ãã€${sessionUser.userName} ã•ã‚“ï¼</p>
-   <p>ãƒ¡ãƒ‹ãƒ¥ãƒ¼ãƒ¬ãƒ™ãƒ«ï¼š${sessionUser.menuLevel}ã§ã™</p>
+   <p>‚æ‚¤‚±‚»A${sessionUser.userName} ‚³‚ñI</p>
+   <p>ƒƒjƒ…[ƒŒƒxƒ‹F${sessionUser.menuLevel}‚Å‚·</p>
    <c:if test="${sessionUser.menuLevel ==0}" >
-  		 <p>ã‚ãªãŸã«ã¯ç®¡ç†è€…æ¨©é™ãŒã‚ã‚Šã¾ã™</p>
+  		 <p>‚ ‚È‚½‚É‚ÍŠÇ—ÒŒ ŒÀ‚ª‚ ‚è‚Ü‚·</p>
    </c:if>
     <c:if test="${sessionUser}== null" >
-  		 <p>sessionUserãŒç©ºã§ã™</p>
+  		 <p>sessionUser‚ª‹ó‚Å‚·</p>
    </c:if>
    
    

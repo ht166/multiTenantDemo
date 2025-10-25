@@ -4,10 +4,10 @@ import com.demo.dto.UserInfDto;
 
 public interface LoginService {
 	/**
-	 * ãƒ­ã‚°ã‚¤ãƒ³ãƒã‚§ãƒƒã‚¯
-	 * @param userId ãƒ¦ãƒ¼ã‚¶ãƒ¼ID
-	 * @param password ãƒ‘ã‚¹ãƒ¯ãƒ¼ãƒ‰
-	 * @return ãƒ­ã‚°ã‚¤ãƒ³ãƒã‚§ãƒƒã‚¯çµæœ
+	 * ƒƒOƒCƒ“ƒ`ƒFƒbƒN
+	 * @param userId ƒ†[ƒU[ID
+	 * @param password ƒpƒXƒ[ƒh
+	 * @return ƒƒOƒCƒ“ƒ`ƒFƒbƒNŒ‹‰Ê
 	 */
 	boolean countByIdAndPassword(String userId,String password);
 	

@@ -16,7 +16,7 @@ import com.demo.repository.UserInfMapper;
 import com.demo.service.InitService;
 @Service
 public class InitServiceImpl implements InitService {
-	/** ãƒ­ã‚¬ãƒ¼ */
+	/** ƒƒK[ */
 	private static final Logger log = LoggerFactory.getLogger(InitServiceImpl.class);
 
 	@Resource
@@ -27,10 +27,10 @@ public class InitServiceImpl implements InitService {
 		DataSourceContext.with("user", () -> {
 			List<UserInf> userList = mapper.getAllUser();
 			if (userList == null || userList.isEmpty()) {
-				log.info("ãƒ¦ãƒ¼ã‚¶ãƒ¼ãŒ1ä»¶ã‚‚å­˜åœ¨ã—ã¾ã›ã‚“ã€‚");
+				log.info("ƒ†[ƒU[‚ª1Œ‚à‘¶İ‚µ‚Ü‚¹‚ñB");
 			} else {
 				for (UserInf user : userList) {
-					log.info("ãƒ¦ãƒ¼ã‚¶ãƒ¼ID={}, ãƒ¦ãƒ¼ã‚¶ãƒ¼å={}, ãƒ¬ãƒ™ãƒ«={}, ã‚³ãƒ¼ãƒ‰={}",
+					log.info("ƒ†[ƒU[ID={}, ƒ†[ƒU[–¼={}, ƒŒƒxƒ‹={}, ƒR[ƒh={}",
 							user.getId(), user.getUserName(), user.getLevel(), user.getCode());
 				}
 			}

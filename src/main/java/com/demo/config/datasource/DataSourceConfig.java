@@ -28,7 +28,7 @@ import com.zaxxer.hikari.HikariDataSource;
 @PropertySource("classpath:/datasources.properties")
 public class DataSourceConfig {
 	
-	/** „É≠„Ç¨„Éº */
+	/** ÉçÉKÅ[ */
 	private static final Logger log = LoggerFactory.getLogger(DataSourceConfig.class);
 	
 	@Autowired

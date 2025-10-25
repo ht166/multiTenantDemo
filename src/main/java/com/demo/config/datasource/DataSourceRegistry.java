@@ -12,25 +12,25 @@ public class DataSourceRegistry {
 
     private final Map<String, DataSource> dataSources = new HashMap<>();
 
-    // ãƒ‡ãƒ¼ã‚¿ã‚½ãƒ¼ã‚¹ã‚’è¿½åŠ 
+    // ƒf[ƒ^ƒ\[ƒX‚ğ’Ç‰Á
     public void add(String name, DataSource dataSource) {
         dataSources.put(name, dataSource);
     }
 
-    // ãƒ‡ãƒ¼ã‚¿ã‚½ãƒ¼ã‚¹ã‚’å–å¾—
+    // ƒf[ƒ^ƒ\[ƒX‚ğæ“¾
     public DataSource get(String name) {
         return dataSources.get(name);
     }
 
-    // å…¨éƒ¨å–å¾—
+    // ‘S•”æ“¾
     public Map<Object, Object> getAll() {
-        // AbstractRoutingDataSource ã§ä½¿ãˆã‚‹ Map<Object,Object> ã«å¤‰æ›
+        // AbstractRoutingDataSource ‚Åg‚¦‚é Map<Object,Object> ‚É•ÏŠ·
         Map<Object, Object> map = new HashMap<>();
         dataSources.forEach((k,v) -> map.put(k, v));
         return map;
     }
 
-    // ãƒ‡ãƒ¼ã‚¿ã‚½ãƒ¼ã‚¹åã‚’è§£æ±ºï¼ˆå¿…è¦ãªã‚‰å¤‰æ›ç”¨ï¼‰
+    // ƒf[ƒ^ƒ\[ƒX–¼‚ğ‰ğŒˆi•K—v‚È‚ç•ÏŠ·—pj
     public String resolveDataSourceName(String key) {
         return dataSources.containsKey(key) ? key : "user";
     }

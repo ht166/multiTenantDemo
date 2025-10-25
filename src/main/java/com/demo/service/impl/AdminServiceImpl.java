@@ -12,7 +12,7 @@ import com.demo.repository.UserInfMapper;
 import com.demo.service.AdminService;
 
 /**
- * ç®¡ç†è€…ã‚¢ã‚«ã‚¦ãƒ³ãƒˆã®ã‚µãƒ¼ãƒ“ã‚¹ã‚’å®Ÿè£…ã—ãŸã‚¯ãƒ©ã‚¹
+ * ŠÇ—ÒƒAƒJƒEƒ“ƒg‚ÌƒT[ƒrƒX‚ğÀ‘•‚µ‚½ƒNƒ‰ƒX
  * @author ht166
  *
  */
@@ -23,14 +23,14 @@ public class AdminServiceImpl implements AdminService {
 	private UserInfMapper userInfMapper;
 
 	/**
-	 * ãƒ¦ãƒ¼ã‚¶ãƒ¼ã®å…¨ä»¶ä¸€è¦§ã‚’å–å¾—
+	 * ƒ†[ƒU[‚Ì‘SŒˆê——‚ğæ“¾
 	 */
 	@Override
 	public List<UserInfDto> getAllUsers() {
-		// DBã‹ã‚‰Entityã®ãƒªã‚¹ãƒˆã‚’å–å¾—
+		// DB‚©‚çEntity‚ÌƒŠƒXƒg‚ğæ“¾
 		List<UserInf> userList = userInfMapper.getAllUser();
 
-		// Entity â†’ DTO ã«å¤‰æ›
+		// Entity ¨ DTO ‚É•ÏŠ·
 		List<UserInfDto> dtoList = new ArrayList<>();
 		for (UserInf user : userList) {
 			UserInfDto dto = new UserInfDto();

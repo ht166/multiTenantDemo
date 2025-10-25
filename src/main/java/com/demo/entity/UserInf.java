@@ -10,33 +10,33 @@ import lombok.Setter;
 public class UserInf {
 
 		/*
-		 * ãƒ¦ãƒ¼ã‚¶ãƒ¼ID
+		 * ƒ†[ƒU[ID
 		 */
 		private String id;
 		
 		/*
-		 * ãƒ‘ã‚¹ãƒ¯ãƒ¼ãƒ‰
+		 * ƒpƒXƒ[ƒh
 		 */
 		private String password;
 		
 		/*
-		 * ãƒ¦ãƒ¼ã‚¶ãƒ¼å
+		 * ƒ†[ƒU[–¼
 		 */
 		private String userName;
 		
 		/*
-		 * ç™»éŒ²æ™‚é–“
+		 * “o˜^ŠÔ
 		 */
 		private Timestamp created_at;
 		
 		/*
-		 * ãƒ¡ãƒ‹ãƒ¥ãƒ¼ãƒ¬ãƒ™ãƒ«
+		 * ƒƒjƒ…[ƒŒƒxƒ‹
 		 */
 		
 		private int level;
 		
 		/**
-		 * æ‰€å±ã‚³ãƒ¼ãƒ‰
+		 * Š‘®ƒR[ƒh
 		 */
 		private String code;
 	}

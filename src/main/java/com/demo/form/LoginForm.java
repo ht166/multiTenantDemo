@@ -5,17 +5,17 @@ import javax.validation.constraints.NotBlank;
 import lombok.Getter;
 import lombok.Setter;
 /**
- * ãƒ­ã‚°ã‚¤ãƒ³ãƒ•ã‚©ãƒ¼ãƒ 
+ * ƒƒOƒCƒ“ƒtƒH[ƒ€
  * @author ht166
  *
  */
 @Getter
 @Setter
 public class LoginForm {
-	@NotBlank(message="ãƒ¦ãƒ¼ã‚¶ãƒ¼IDã¯å¿…é ˆã§ã™")
+	@NotBlank(message="ƒ†[ƒU[ID‚Í•K{‚Å‚·")
 	private String userId;
 	
-	@NotBlank(message="ãƒ‘ã‚¹ãƒ¯ãƒ¼ãƒ‰ã¯å¿…é ˆã§ã™")
+	@NotBlank(message="ƒpƒXƒ[ƒh‚Í•K{‚Å‚·")
     private String password;
 
 }

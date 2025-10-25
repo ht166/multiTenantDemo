@@ -9,7 +9,7 @@ import org.springframework.stereotype.Component;
 import lombok.Getter;
 import lombok.Setter;
 /**
- * ãƒ¦ãƒ¼ã‚¶ãƒ¼æƒ…å ±ã®DTO
+ * ƒ†[ƒU[î•ñ‚ÌDTO
  * @author ht166
  *
  */
@@ -19,33 +19,33 @@ import lombok.Setter;
 @Scope(value = "session", proxyMode = ScopedProxyMode.TARGET_CLASS)
 public class UserInfDto {
 	/*
-	 * ãƒ¦ãƒ¼ã‚¶ãƒ¼ID
+	 * ƒ†[ƒU[ID
 	 */
 	private String id;
 	
 	/*
-	 * ãƒ‘ã‚¹ãƒ¯ãƒ¼ãƒ‰
+	 * ƒpƒXƒ[ƒh
 	 */
 	private String password;
 	
 	/*
-	 * ãƒ¦ãƒ¼ã‚¶ãƒ¼å
+	 * ƒ†[ƒU[–¼
 	 */
 	private String userName;
 	
 	/*
-	 * ç™»éŒ²æ™‚é–“
+	 * “o˜^ŠÔ
 	 */
 	private Timestamp created_at;
 	
 	/*
-	 * ãƒ¡ãƒ‹ãƒ¥ãƒ¼ãƒ¬ãƒ™ãƒ«
+	 * ƒƒjƒ…[ƒŒƒxƒ‹
 	 */
 	
 	private int level;
 	
 	/**
-	 * æ‰€å±ã‚³ãƒ¼ãƒ‰
+	 * Š‘®ƒR[ƒh
 	 */
 	private String code;
 }

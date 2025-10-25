@@ -27,26 +27,26 @@ public class LoginAction {
 	private static final Logger logger = LoggerFactory.getLogger(MethodHandles.lookup().lookupClass());
 
 	/**
-	 * ã‚»ãƒƒã‚·ãƒ§ãƒ³ã‚¹ã‚³ãƒ¼ãƒ—ã® ãƒ¦ãƒ¼ã‚¶ãƒ¼æƒ…å ±DTO
+	 * ƒZƒbƒVƒ‡ƒ“ƒXƒR[ƒv‚Ì ƒ†[ƒU[î•ñDTO
 	 */
 	@Autowired
 	private UserInfDto sessionUser; 
 	
 	/**
-	 * ãƒ­ã‚°ã‚¤ãƒ³ã‚µãƒ¼ãƒ“ã‚¹
+	 * ƒƒOƒCƒ“ƒT[ƒrƒX
 	 */
 	@Autowired
 	private LoginService loginSerivce;
 	
 	/*
-	 * ãƒ­ã‚°ã‚¤ãƒ³ç”»é¢JSPå
+	 * ƒƒOƒCƒ“‰æ–ÊJSP–¼
 	 */
 	String loginJSPName = "login/login";
 
 	@GetMapping("/index")
 	public String index(Model model) {
 		model.addAttribute("loginForm", new LoginForm());
-		logger.info("ãƒ­ã‚°ã‚¤ãƒ³å‡¦ç†ç”»é¢ã¸é·ç§»");
+		logger.info("ƒƒOƒCƒ“ˆ—‰æ–Ê‚Ö‘JˆÚ");
 		return loginJSPName;
 	}
 
@@ -54,33 +54,33 @@ public class LoginAction {
 	public String auth(@ModelAttribute("loginForm") @Valid LoginForm form, BindingResult bindingResult, Model model) {
 		String userId = form.getUserId();
 		String password = form.getPassword();
-		logger.info("ãƒ­ã‚°ã‚¤ãƒ³èªè¨¼å‡¦ç†é–‹å§‹ ");
+		logger.info("ƒƒOƒCƒ“”FØˆ—ŠJn ");
 		logger.info("userId={}", userId);
 		logger.info("password={}", password);
 	
 		if (bindingResult.hasErrors()) {
-			logger.info("ãƒãƒªãƒ‡ãƒ¼ã‚·ãƒ§ãƒ³ã‚¨ãƒ©ãƒ¼");
-			return loginJSPName; // ã‚¨ãƒ©ãƒ¼æ™‚ã¯å†åº¦ãƒ•ã‚©ãƒ¼ãƒ è¡¨ç¤º
+			logger.info("ƒoƒŠƒf[ƒVƒ‡ƒ“ƒGƒ‰[");
+			return loginJSPName; // ƒGƒ‰[‚ÍÄ“xƒtƒH[ƒ€•\¦
 		}
 		
 		if (loginSerivce.countByIdAndPassword(userId, password)) {
-			logger.info("ãƒ­ã‚°ã‚¤ãƒ³æˆåŠŸ");
+			logger.info("ƒƒOƒCƒ“¬Œ÷");
 			UserInfDto loginUser = loginSerivce.getUserInf(userId);
-			logger.info("ãƒ­ã‚°ã‚¤ãƒ³ãƒ¦ãƒ¼ã‚¶ãƒ¼ã‚’ã‚»ãƒƒã‚·ãƒ§ãƒ³ãƒ¦ãƒ¼ã‚¶ãƒ¼ã¨ã—ã¦æ ¼ç´");
+			logger.info("ƒƒOƒCƒ“ƒ†[ƒU[‚ğƒZƒbƒVƒ‡ƒ“ƒ†[ƒU[‚Æ‚µ‚ÄŠi”[");
 			BeanUtils.copyProperties(loginUser, sessionUser);
 			
-			logger.info("welcomeã¸é·ç§»");
+			logger.info("welcome‚Ö‘JˆÚ");
 			return "redirect:/welcome/index";
 		} else {
-			model.addAttribute("message", "ãƒ¦ãƒ¼ã‚¶ãƒ¼IDã¾ãŸã¯ãƒ‘ã‚¹ãƒ¯ãƒ¼ãƒ‰ãŒé–“é•ã£ã¦ã„ã¾ã™");
-			logger.info("ãƒ­ã‚°ã‚¤ãƒ³å¤±æ•—ã€€ç”»é¢ã‚’å†èª­ã¿è¾¼ã¿");
+			model.addAttribute("message", "ƒ†[ƒU[ID‚Ü‚½‚ÍƒpƒXƒ[ƒh‚ªŠÔˆá‚Á‚Ä‚¢‚Ü‚·");
+			logger.info("ƒƒOƒCƒ“¸”s@‰æ–Ê‚ğÄ“Ç‚İ‚İ");
 			return loginJSPName;
 		}
 	}
 	
     @GetMapping("/logout")
     public String logout() {
-        // ã‚»ãƒƒã‚·ãƒ§ãƒ³ã‚¹ã‚³ãƒ¼ãƒ—ã® DTO ã‚’ãƒªã‚»ãƒƒãƒˆ
+        // ƒZƒbƒVƒ‡ƒ“ƒXƒR[ƒv‚Ì DTO ‚ğƒŠƒZƒbƒg
         sessionUser.setId(null);
         sessionUser.setUserName(null);
         return "redirect:/login/index";

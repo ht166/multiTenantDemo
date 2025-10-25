@@ -8,10 +8,10 @@
 </head>
 <body>
    <% out.println("welcome"); %>
-   <p>ã‚ˆã†ã“ãã€${sessionUser.userName} ã•ã‚“ï¼</p>
-   <p>ãƒ¡ãƒ‹ãƒ¥ãƒ¼ãƒ¬ãƒ™ãƒ«ï¼š${sessionUser.level}ã§ã™</p>
+   <p>‚æ‚¤‚±‚»A${sessionUser.userName} ‚³‚ñI</p>
+   <p>ƒƒjƒ…[ƒŒƒxƒ‹F${sessionUser.level}‚Å‚·</p>
     <c:if test="${sessionUser}== null" >
-  		 <p>sessionUserãŒç©ºã§ã™</p>
+  		 <p>sessionUser‚ª‹ó‚Å‚·</p>
    </c:if>
 </body>
 </html>

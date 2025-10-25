@@ -4,14 +4,14 @@ import java.util.List;
 
 import com.demo.dto.UserInfDto;
 /**
- * ç®¡ç†è€…ã‚¢ã‚«ã‚¦ãƒ³ãƒˆã®ã‚µãƒ¼ãƒ“ã‚¹
+ * ŠÇ—ÒƒAƒJƒEƒ“ƒg‚ÌƒT[ƒrƒX
  * @author ht166
  *
  */
 public interface AdminService {
 	/**
-	 * ãƒ¦ãƒ¼ã‚¶ãƒ¼ä¸€è¦§ã‚’å–å¾—
-	 * @return ãƒ¦ãƒ¼ã‚¶ãƒ¼ä¸€è¦§
+	 * ƒ†[ƒU[ˆê——‚ğæ“¾
+	 * @return ƒ†[ƒU[ˆê——
 	 */
 	public  List<UserInfDto> getAllUsers();
 }

@@ -4,7 +4,7 @@ import lombok.Getter;
 import lombok.Setter;
 
 /**
- * 繝ｦ繝ｼ繧ｶ繝ｼ驕ｸ謚槭ヵ繧ｩ繝ｼ繝
+ * ユーザー選択フォーム
  * @author ht166
  *
  */

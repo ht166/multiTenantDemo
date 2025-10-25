@@ -29,28 +29,28 @@ public class AdminAction {
 	
 	@GetMapping("/users")
 	public String users(Model model) {
-		logger.info("ãƒ¦ãƒ¼ã‚¶ãƒ¼ä¸€è¦§ç”»é¢ã¸é·ç§»");
+		logger.info("ƒ†[ƒU[ˆê——‰æ–Ê‚Ö‘JˆÚ");
 		
-	    // ãƒ¦ãƒ¼ã‚¶ãƒ¼ä¸€è¦§ãªã©ã‚’å–å¾—ã—ã¦ model ã«ã‚»ãƒƒãƒˆ
+	    // ƒ†[ƒU[ˆê——‚È‚Ç‚ðŽæ“¾‚µ‚Ä model ‚ÉƒZƒbƒg
 	    users = adminService.getAllUsers();
 	    model.addAttribute("users", users);
 	    
-	    return "admin/users"; // admin/users.jsp ã‚’è¡¨ç¤º
+	    return "admin/users"; // admin/users.jsp ‚ð•\Ž¦
 	}
 	
-//	TODO æœªå®Œæˆ
+//	TODO –¢Š®¬
 	@GetMapping("/editUser")
 	public String editUser(Model model) {
 		return "admin/editUser";
 	}
 	
-//	TODO æœªå®Œæˆ
+//	TODO –¢Š®¬
 	@GetMapping("/createUser")
 	public String createUser(Model model) {
 		return "admin/user";
 	}
 	
-//	TODO æœªå®Œæˆ
+//	TODO –¢Š®¬
 	@PostMapping("/delete")
 	public String deleteUser(Model model) {
 		return "forward:/admin/users";

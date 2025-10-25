@@ -23,7 +23,7 @@ public class MyBatisConfig {
         SqlSessionFactoryBean factory = new SqlSessionFactoryBean();
         factory.setDataSource(routingDataSource);
         
-        // Mapper XML ã®èª­ã¿è¾¼ã¿å…ˆã‚’æŒ‡å®š
+        // Mapper XML ‚Ì“Ç‚İ‚İæ‚ğw’è
         factory.setMapperLocations(
             new PathMatchingResourcePatternResolver()
                 .getResources("classpath:mapper/*.xml")
