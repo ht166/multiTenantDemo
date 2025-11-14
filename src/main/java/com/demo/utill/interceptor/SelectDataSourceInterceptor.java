@@ -29,7 +29,7 @@ public class SelectDataSourceInterceptor implements HandlerInterceptor {
     	if (sessionUser != null && sessionUser.getCode() != null && !sessionUser.getCode().isBlank()) {
             dsKey = sessionUser.getCode();
             log.info("dsKey = " +dsKey);
-            DataSourceContextHolder.setDataSourceKey(dsKey);
+            DataSourceContextHolder.setIfChanged(dsKey);
         }else if(sessionUser != null) {
         	log.info("セッションユーザーがnullのためデータソース切り替えなし");
         }else {

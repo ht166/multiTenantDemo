@@ -23,7 +23,6 @@ public class LoginServiceImpl implements LoginService {
 		logger.info("countByIdAndPassword‚ðŽÀs");
 		int count = userInfMapper.countByIdAndPassword(userId, password);
 		logger.info("countByIdAndPassword‚ª¬Œ÷");
-		
 		return (count >= 0);
 	}
 	

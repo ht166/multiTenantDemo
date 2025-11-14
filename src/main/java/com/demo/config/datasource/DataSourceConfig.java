@@ -7,7 +7,6 @@ import javax.sql.DataSource;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.boot.context.properties.EnableConfigurationProperties;
 import org.springframework.context.annotation.Bean;
@@ -30,15 +29,16 @@ public class DataSourceConfig {
 	
 	/** ÉçÉKÅ[ */
 	private static final Logger log = LoggerFactory.getLogger(DataSourceConfig.class);
-	
-	@Autowired
-	private SpotA spotA;
-	
-	@Autowired
-	private SpotB spotB;
-	
-	@Autowired
-	private UserDataSource userDataSource;
+
+	private final SpotA spotA;
+	private final SpotB spotB;
+	private final UserDataSource userDataSource;
+
+	public DataSourceConfig(SpotA spotA, SpotB spotB, UserDataSource userDataSource) {
+		this.spotA = spotA;
+		this.spotB = spotB;
+		this.userDataSource = userDataSource;
+	}
 	
     @Bean("A")
     HikariDataSource dataSourceA() {

@@ -16,6 +16,7 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+import com.demo.config.datasource.DataSourceContextHolder;
 import com.demo.dto.UserInfDto;
 import com.demo.form.LoginForm;
 import com.demo.service.LoginService;
@@ -52,6 +53,11 @@ public class LoginAction {
 
 	@PostMapping("/auth")
 	public String auth(@ModelAttribute("loginForm") @Valid LoginForm form, BindingResult bindingResult, Model model) {
+		
+		try {
+			logger.info("明示的にデータソースをuserに設定");
+			DataSourceContextHolder.setIfChanged("user");
+
 		String userId = form.getUserId();
 		String password = form.getPassword();
 		logger.info("ログイン認証処理開始 ");
@@ -75,6 +81,10 @@ public class LoginAction {
 			model.addAttribute("message", "ユーザーIDまたはパスワードが間違っています");
 			logger.info("ログイン失敗　画面を再読み込み");
 			return loginJSPName;
+		}
+		
+		}finally {
+			DataSourceContextHolder.clear();
 		}
 	}
 	

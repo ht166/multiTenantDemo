@@ -23,6 +23,7 @@ public class DataSourceRegistry {
     }
 
     // ‘S•”Žæ“¾
+    @Deprecated
     public Map<Object, Object> getAll() {
         // AbstractRoutingDataSource ‚ÅŽg‚¦‚é Map<Object,Object> ‚É•ÏŠ·
         Map<Object, Object> map = new HashMap<>();

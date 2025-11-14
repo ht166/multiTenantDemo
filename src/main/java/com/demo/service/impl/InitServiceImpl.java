@@ -24,6 +24,7 @@ public class InitServiceImpl implements InitService {
 
 	@EventListener(ApplicationReadyEvent.class)
 	public void init() {
+		log.info("initService#initäJén");
 		DataSourceContext.with("user", () -> {
 			List<UserInf> userList = mapper.getAllUser();
 			if (userList == null || userList.isEmpty()) {
@@ -35,6 +36,7 @@ public class InitServiceImpl implements InitService {
 				}
 			}
 		});
+		log.info("initService#initèIóπ");
 	}
 
 }

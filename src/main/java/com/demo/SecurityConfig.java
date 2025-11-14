@@ -1,23 +1,25 @@
 package com.demo;
 
+import static org.springframework.security.config.Customizer.*;
+
+import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
-import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
+import org.springframework.security.web.SecurityFilterChain;
 
 @Configuration
 @EnableWebSecurity
-public class SecurityConfig extends WebSecurityConfigurerAdapter {
+public class SecurityConfig {
 
-    @Override
-    protected void configure(HttpSecurity http) throws Exception {
-        http.authorizeRequests()
-                .anyRequest().permitAll() // ここで全リクエスト許可
-            .and()
-            .formLogin()
-                .loginPage("/login/login")
-                .permitAll()
-            .and()
-            .csrf().disable(); // 開発用
+    @Bean
+    SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
+        http.authorizeHttpRequests(requests -> requests
+                .anyRequest().permitAll())
+                .formLogin(login -> login
+                        .loginPage("/login/login")
+                        .permitAll())
+                .csrf(withDefaults());
+        return http.build(); //
     }
 }
