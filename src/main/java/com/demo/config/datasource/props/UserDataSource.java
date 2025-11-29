@@ -1,15 +1,11 @@
 package com.demo.config.datasource.props;
 
 import org.springframework.boot.context.properties.ConfigurationProperties;
-
-import lombok.Getter;
-import lombok.Setter;
-
+/**
+ * ユーザーデータベース用のデータソースプロパティクラス
+ * @author ht166
+ *
+ */
 @ConfigurationProperties(prefix="user")
-@Getter
-@Setter
-public class UserDataSource {
-	private String url; 
-	private String username;
-	private String password;
+public class UserDataSource extends AbstractDataSourceSpot {
 }

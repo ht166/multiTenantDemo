@@ -11,7 +11,7 @@
         <filter-class>org.springframework.web.filter.CharacterEncodingFilter</filter-class>
         <init-param>
             <param-name>encoding</param-name>
-            <param-value>UTF-8</param-value>
+            <param-value>MS932</param-value>
         </init-param>
         <init-param>
             <param-name>forceEncoding</param-name>
@@ -23,5 +23,21 @@
         <filter-name>encodingFilter</filter-name>
         <url-pattern>/*</url-pattern>
     </filter-mapping>
-
+	<jsp-config> 
+		<jsp-property-group> 
+			<url-pattern>*.jsp</url-pattern> 
+			
+			<!-- JSTL EL を有効 --> 
+			<el-ignored>false</el-ignored> 
+			
+			<!-- 文字コード --> 
+			<page-encoding>MS932</page-encoding>
+			 
+			<!-- scriptlet を禁止しない（） --> 
+			<scripting-invalid>false</scripting-invalid>
+			
+			 <!-- include prelude（共通ヘッダ JSPF） --> 
+			 <include-prelude>/WEB-INF/view/common/common.jspf</include-prelude>
+			</jsp-property-group>
+	</jsp-config>
 </web-app>

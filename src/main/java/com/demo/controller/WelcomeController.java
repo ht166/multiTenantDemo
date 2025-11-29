@@ -1,4 +1,4 @@
-package com.demo.action;
+package com.demo.controller;
 
 import java.lang.invoke.MethodHandles;
 
@@ -17,8 +17,8 @@ import com.demo.dto.UserInfDto;
  *
  */
 @Controller
-@RequestMapping(value="/welcome")
-public class WelcomeAction {
+@RequestMapping(value="/multiTenantDemo/welcome")
+public class WelcomeController {
 	private static final Logger logger = LoggerFactory.getLogger(MethodHandles.lookup().lookupClass());
 	/**
 	 * セッションスコープの ユーザー情報DTO

@@ -31,7 +31,7 @@ public class DataSourceRegistry {
         return map;
     }
 
-    // データソース名を解決（必要なら変換用）
+    // データソース名を解決
     public String resolveDataSourceName(String key) {
         return dataSources.containsKey(key) ? key : "user";
     }

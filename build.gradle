@@ -2,8 +2,14 @@ plugins {
     id 'java'
     id 'org.springframework.boot' version '2.7.18'
     id 'io.spring.dependency-management' version '1.0.15.RELEASE'
+    id 'war'
 }
-
+bootWar {
+    archiveFileName = 'mutiTenant-demo.war'
+}
+bootJar {
+    enabled = false   // jarê∂ê¨Çñ≥å¯âª
+}
 group = 'com.example'
 version = '0.0.1-SNAPSHOT'
 description = 'Demo project for Spring Boot 2.7 + MyBatis Multi-Tenant'
@@ -56,4 +62,8 @@ dependencies {
 
 tasks.named('test') {
     useJUnitPlatform()
+}
+
+tasks.withType(JavaCompile) {
+    options.encoding = 'MS932'
 }

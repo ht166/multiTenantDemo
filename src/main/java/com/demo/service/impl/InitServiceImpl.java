@@ -20,13 +20,13 @@ public class InitServiceImpl implements InitService {
 	private static final Logger log = LoggerFactory.getLogger(InitServiceImpl.class);
 
 	@Resource
-	private UserInfMapper mapper;
+	private UserInfMapper userInfMapper;
 
 	@EventListener(ApplicationReadyEvent.class)
 	public void init() {
 		log.info("initService#init開始");
 		DataSourceContext.with("user", () -> {
-			List<UserInf> userList = mapper.getAllUser();
+			List<UserInf> userList = userInfMapper.getAllUser();
 			if (userList == null || userList.isEmpty()) {
 				log.info("ユーザーが1件も存在しません。");
 			} else {

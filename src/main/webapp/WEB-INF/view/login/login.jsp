@@ -1,7 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=MS932"
     pageEncoding="MS932"%>
-<%@ taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
-<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+
 <%@ page isELIgnored="false" %>
 <!DOCTYPE html>
 <html>
@@ -16,7 +15,7 @@
     </c:if>
    
     <!-- <c:set var="jump_url" value="/login/auth"/> -->
-    <form:form modelAttribute="loginForm" action="/login/auth" method="post">
+    <form:form modelAttribute="loginForm" action="/multiTenantDemo/login/auth" method="post">
         <div>
             <form:label path="userId">ユーザーID：</form:label>
             <form:input path="userId"/>

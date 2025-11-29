@@ -1,5 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=MS932"	pageEncoding="MS932"%>
-<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -15,7 +15,7 @@
     <c:if test="${sessionUser}== null" >
   		 <p>sessionUser‚ª‹ó‚Å‚·</p>
    </c:if>
-<a href="${pageContext.request.contextPath}/admin/users">
+<a href="/multiTenantDemo/admin/users">
     <button type="button">ƒ†[ƒU[ŠÇ—‰æ–Ê_ˆê——‚Ö</button>
 </a>
 </body>

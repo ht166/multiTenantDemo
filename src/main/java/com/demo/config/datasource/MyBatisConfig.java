@@ -26,7 +26,7 @@ public class MyBatisConfig {
         // Mapper XML ‚Ì“Ç‚İ‚İæ‚ğw’è
         factory.setMapperLocations(
             new PathMatchingResourcePatternResolver()
-                .getResources("classpath:mapper/*.xml")
+                .getResources("classpath:mapper/**/*.xml")
         );
         
         factory.setTypeAliasesPackage("com.demo.entity");

@@ -1,15 +1,11 @@
 package com.demo.config.datasource.props;
 
 import org.springframework.boot.context.properties.ConfigurationProperties;
-
-import lombok.Getter;
-import lombok.Setter;
-
+/**
+ * SpotB用のデータソースプロパティクラス
+ * @author ht166
+ *
+ */
 @ConfigurationProperties(prefix="b")
-@Getter
-@Setter
-public class SpotB {
-	private String url; 
-	private String username;
-	private String password;
+public class SpotB extends AbstractDataSourceSpot {
 }

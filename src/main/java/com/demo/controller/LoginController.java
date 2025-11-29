@@ -1,6 +1,5 @@
-package com.demo.action;
+package com.demo.controller;
 
-import java.lang.invoke.MethodHandles;
 
 import javax.validation.Valid;
 
@@ -22,65 +21,74 @@ import com.demo.form.LoginForm;
 import com.demo.service.LoginService;
 
 
-@RequestMapping(value = "/login")
+@RequestMapping(value = "/multiTenantDemo/login")
 @Controller
-public class LoginAction {
-	private static final Logger logger = LoggerFactory.getLogger(MethodHandles.lookup().lookupClass());
-
+public class LoginController {
+	/** ロガー */
+	private static final Logger log = LoggerFactory.getLogger(LoginController.class);
+	
+	/*
+	 * ログイン画面JSP名
+	 */
+	private static final String LOGIN_JSP_NAME = "login/login";
+	
+	/**
+	 * ログイン処理の業務ロジックサービス
+	 */
+	@Autowired
+	private final LoginService loginSerivce;
 	/**
 	 * セッションスコープの ユーザー情報DTO
 	 */
 	@Autowired
 	private UserInfDto sessionUser; 
 	
+
 	/**
-	 * ログインサービス
+	 * LoginControllerのコンストラクタ
+	 * @param loginSerivce
 	 */
-	@Autowired
-	private LoginService loginSerivce;
-	
-	/*
-	 * ログイン画面JSP名
-	 */
-	String loginJSPName = "login/login";
+	public LoginController(LoginService loginSerivce) {
+		this.loginSerivce = loginSerivce;
+	}
 
 	@GetMapping("/index")
 	public String index(Model model) {
 		model.addAttribute("loginForm", new LoginForm());
-		logger.info("ログイン処理画面へ遷移");
-		return loginJSPName;
+		log.info("ログイン処理画面へ遷移");
+		return LOGIN_JSP_NAME;
 	}
 
 	@PostMapping("/auth")
 	public String auth(@ModelAttribute("loginForm") @Valid LoginForm form, BindingResult bindingResult, Model model) {
 		
 		try {
-			logger.info("明示的にデータソースをuserに設定");
+			log.info("明示的にデータソースをuserに設定");
 			DataSourceContextHolder.setIfChanged("user");
 
 		String userId = form.getUserId();
 		String password = form.getPassword();
-		logger.info("ログイン認証処理開始 ");
-		logger.info("userId={}", userId);
-		logger.info("password={}", password);
+		log.info("ログイン認証処理開始 ");
+		log.info("userId={}", userId);
+		log.info("password={}", password);
 	
 		if (bindingResult.hasErrors()) {
-			logger.info("バリデーションエラー");
-			return loginJSPName; // エラー時は再度フォーム表示
+			log.info("バリデーションエラー");
+			return LOGIN_JSP_NAME; // エラー時は再度フォーム表示
 		}
 		
 		if (loginSerivce.countByIdAndPassword(userId, password)) {
-			logger.info("ログイン成功");
+			log.info("ログイン成功");
 			UserInfDto loginUser = loginSerivce.getUserInf(userId);
-			logger.info("ログインユーザーをセッションユーザーとして格納");
+			log.info("ログインユーザーをセッションユーザーとして格納");
 			BeanUtils.copyProperties(loginUser, sessionUser);
 			
-			logger.info("welcomeへ遷移");
-			return "redirect:/welcome/index";
+			log.info("welcomeへ遷移");
+			return "redirect:/multiTenantDemo/welcome/index";
 		} else {
 			model.addAttribute("message", "ユーザーIDまたはパスワードが間違っています");
-			logger.info("ログイン失敗　画面を再読み込み");
-			return loginJSPName;
+			log.info("ログイン失敗　画面を再読み込み");
+			return LOGIN_JSP_NAME;
 		}
 		
 		}finally {
